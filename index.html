@@ -14,6 +14,8 @@
         </svg>
     </button>
 
+    <div class="spacer spacer-left"></div>
+
     <div class="search-bar">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true">
             <circle cx="11" cy="11" r="7"/>
@@ -21,6 +23,8 @@
         </svg>
         <input id="searchInput" type="text" placeholder="Search Second Hand...">
     </div>
+
+    <div class="spacer spacer-right"></div>
 
     <div class="header-menu">
         <span class="lang">En</span>
@@ -41,7 +45,25 @@
     <p>A place just for foreign Chinese international students and communities to buy, sell and pass things on.</p>
 </section>
 
-<main class="grid" id="itemGrid"></main>
+<main class="mainContent" id="mainContents">
+    <aside class="side-filter">
+        <p class="text-sec">Filter</p>
+        <div class="filter-group">
+            <p class="text-sec">Price</p>
+            <p>Negotiable</p>
+        </div>
+        <div class="filter-group">
+            <p class="text-sec">Delivery</p>
+            <p>Pick up only</p>
+            <p>Deliverable</p>
+        </div>
+    </aside>
+
+    <div class="grid" id="grid">
+        <div class="item">...</div>
+        <div class="item">...</div>
+    </div>
+</main>
 
 <button class="to-top" id="toTop" aria-label="回到顶部">
     <svg viewBox="0 0 24 24" stroke-width="2">

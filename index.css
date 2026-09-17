@@ -1,11 +1,30 @@
+:root {
+    --filter-width: 180px;
+    --filter-gap: 40px;
+}
+
 header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 5px 40px 5px 20px;
     border-bottom: 1px solid #e2ded4;
     /*border:1px solid #000000;*/
-    gap: 24px;
+    gap: 16px;
+}
+
+/*----------   search bar 中间偏左solution   ---------- */
+
+.spacer {
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+.spacer-left {
+    flex-grow: 0.8; /* 左边空白权重较小 */
+}
+
+.spacer-right {
+    flex-grow: 2.2; /* 右边空白权重较大,所以search-bar会偏左 */
 }
 
 /*----------   burger menu   ---------- */
@@ -16,6 +35,7 @@ header {
     display: flex;
     align-items: center;
     color: #000000;
+    flex-shrink: 0;
 }
 
 .burger-btn svg {
@@ -25,12 +45,12 @@ header {
 }
 
 .search-bar {
-    flex: 1;
-    max-width: 640px;
-    margin-left: -20%;
+    flex: 0 1 480px;
+    min-width: 140px;
     display: flex;
     align-items: center;
     gap: 10px;
+    /*border:1px solid #000000;*/
 }
 
 .search-bar input {
@@ -39,6 +59,8 @@ header {
     background: transparent;
     font-size: 16px;
     width: 100%;
+    min-width: 0;
+    color: #b3ada0;
 }
 
 .search-bar input::placeholder {
@@ -59,11 +81,12 @@ header {
     font-size: 16px;
     white-space: nowrap;
     color: #525252;
+    flex-shrink: 0;
 }
 
-.header-menu a{
+.header-menu a {
     text-decoration: none;
-    /*color: #525252;*/
+    color: #525252;
 }
 
 /*----------   Navigation category    ----------*/
@@ -73,8 +96,12 @@ nav.pageCategory {
     align-items: center;
     justify-content: flex-end;
     gap: 38px;
-    padding: 20px 40px;
+    padding: 40px 40px 0 0;
+    position: sticky;
+    top: 5px;
+    z-index: 10;
     /*border-bottom: 1px solid #000000;*/
+    /*border: 1px solid #000000;*/
     overflow-x: auto;
 }
 
@@ -103,14 +130,14 @@ nav.pageCategory .cat.active {
 
 .page-title {
     position: relative;
-    padding: 20px 40px 40px;
+    padding: 0 40px 40px;
     overflow: hidden;
     /*border: 1px solid #000000;*/
 }
 
 .page-title h1 {
     font-weight: 500;
-    font-size: 64px;
+    font-size: 55px;
     margin: 0 0 14px;
     letter-spacing: -0.01em;
     position: relative;
@@ -119,10 +146,74 @@ nav.pageCategory .cat.active {
 .page-title p {
     font-size: 18px;
     color: #8b8578;
-    max-width: 480px;
+    max-width: 490px;
     line-height: 1.5;
     margin: 0;
     position: relative;
+}
+
+/* ---------- main content ---------- */
+main {
+    display: flex;
+    align-items: flex-start;
+    /*gap: 40px;？？？？？*/
+    padding: 35px 70px 20px 30px;
+    /*border: 1px solid #000000;*/
+}
+
+.side-filter {
+    font-size: 14px;
+    font-weight: lighter;
+    position: fixed;
+    top: 30%;
+    transform: translateY(-50%); /* 让元素自身高度的中点对齐到50%的位置,这样才是真正的垂直居中 */
+    left: 40px; /* 距离左边的距离,根据你的实际布局调整 */
+    z-index: 10;
+    width: var(--filter-width);
+    /*border: 1px solid #000000;*/
+}
+
+.side-filter .text-sec{
+    font-size: 17px;
+}
+
+.filter-group {
+    padding: -1px 0;
+    /*border: 1px solid #000000;*/
+}
+
+.grid {
+    margin-left: calc(var(--filter-width) + var(--filter-gap));
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px 28px;
+    /*border: 1px solid #000000;*/
+}
+
+.card {
+    display: block;
+}
+
+.thumb {
+    width: 100%;
+    aspect-ratio: 346/433;;
+    background: var(--paper-dim);
+    overflow: hidden;
+    border-radius: var(--radius);
+    margin-bottom: 14px;
+    position: relative;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s ease;
+}
+
+.card:hover .thumb img {
+    transform: scale(1.035);
 }
 
 /* ---------- To-top button ---------- */
@@ -154,4 +245,10 @@ nav.pageCategory .cat.active {
     width: 18px;
     height: 18px;
     stroke: currentColor;
+}
+
+@media (max-width: 768px) {
+    .search-bar {
+        margin-left: 0;
+    }
 }
