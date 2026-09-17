@@ -1,0 +1,157 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 40px 5px 20px;
+    border-bottom: 1px solid #e2ded4;
+    /*border:1px solid #000000;*/
+    gap: 24px;
+}
+
+/*----------   burger menu   ---------- */
+.burger-btn {
+    background: none;
+    border: none;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+.burger-btn svg {
+    width: 25px;
+    height: 25px;
+    stroke: currentColor;
+}
+
+.search-bar {
+    flex: 1;
+    max-width: 640px;
+    margin-left: -20%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    width: 100%;
+}
+
+.search-bar input::placeholder {
+    color: #b3ada0;
+}
+
+.search-bar svg {
+    width: 23px;
+    height: 23px;
+    stroke: #b3ada0;
+    flex-shrink: 0;
+}
+
+.header-menu {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    font-size: 16px;
+    white-space: nowrap;
+    color: #525252;
+}
+
+.header-menu a{
+    text-decoration: none;
+    /*color: #525252;*/
+}
+
+/*----------   Navigation category    ----------*/
+
+nav.pageCategory {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 38px;
+    padding: 20px 40px;
+    /*border-bottom: 1px solid #000000;*/
+    overflow-x: auto;
+}
+
+nav.pageCategory .cat {
+    font-size: 15px;
+    color: #8b8578;
+    padding: 0 0 4px 0;
+    white-space: nowrap;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+}
+
+nav.pageCategory .cat:hover {
+    color: #1c1b19;
+}
+
+nav.pageCategory .cat.active {
+    color: #1c1b19;
+    font-weight: 500;
+    border-bottom-color: #1c1b19;
+}
+
+
+/*----------    Page title     ---------- */
+
+.page-title {
+    position: relative;
+    padding: 20px 40px 40px;
+    overflow: hidden;
+    /*border: 1px solid #000000;*/
+}
+
+.page-title h1 {
+    font-weight: 500;
+    font-size: 64px;
+    margin: 0 0 14px;
+    letter-spacing: -0.01em;
+    position: relative;
+}
+
+.page-title p {
+    font-size: 18px;
+    color: #8b8578;
+    max-width: 480px;
+    line-height: 1.5;
+    margin: 0;
+    position: relative;
+}
+
+/* ---------- To-top button ---------- */
+
+.to-top {
+    position: fixed;
+    right: 28px;
+    bottom: 28px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #000000;
+    color: #fbfaf7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .18);
+    /*opacity:0;pointer-events:none;*/
+    /*transition:opacity .25s ease, transform .25s ease;*/
+}
+
+.to-top.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.to-top svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+}
