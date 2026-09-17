@@ -3,8 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>SecondHand App</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
 </head>
 <body>
-<h1>Hello World!</h1>
+<header>
+    <button class="burger-btn" id="burgerMenuBtn" aria-label="Open Page Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" aria-hidden="true">
+            <path d="M3 6h18M3 12h18M3 18h18"/>
+        </svg>
+    </button>
+
+    <div class="search-bar">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"/>
+            <path d="m21 21-4.3-4.3"/>
+        </svg>
+        <input id="searchInput" type="text" placeholder="Search Second Hand...">
+    </div>
+
+    <div class="header-menu">
+        <span class="lang">En</span>
+        <a href="#Login" class="login">Login</a>
+    </div>
+</header>
+
+<nav class="pageCategory" id="pageCat" aria-label="Categories navigation">
+    <button class="cat active" data-cat="all" aria-pressed="true">All</button>
+    <button class="cat" data-cat="furniture" aria-pressed="false">Furniture</button>
+    <button class="cat" data-cat="electric" aria-pressed="false">Electric Applicance</button>
+    <button class="cat" data-cat="daily" aria-pressed="false">Daily Usage</button>
+    <button class="cat" data-cat="wardrobe" aria-pressed="false">Wardrobe</button>
+    <button class="cat" data-cat="others" aria-pressed="false">Others</button>
+</nav>
+<section class="page-title">
+    <h1>Second Hand</h1>
+    <p>A place just for foreign Chinese international students and communities to buy, sell and pass things on.</p>
+</section>
+
+<main class="grid" id="itemGrid"></main>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">
+    <svg viewBox="0 0 24 24" stroke-width="2">
+        <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+</button>
+
+
 </body>
 </html>
