@@ -1,6 +1,11 @@
 :root {
     --filter-width: 180px;
     --filter-gap: 40px;
+    --page-bg: #ffffff;
+}
+
+body {
+    background-color: var(--page-bg);
 }
 
 header {
@@ -10,6 +15,10 @@ header {
     border-bottom: 1px solid #e2ded4;
     /*border:1px solid #000000;*/
     gap: 16px;
+}
+
+a {
+    text-decoration: none;
 }
 
 /*----------   search bar 中间偏左solution   ---------- */
@@ -85,7 +94,6 @@ header {
 }
 
 .header-menu a {
-    text-decoration: none;
     color: #525252;
 }
 
@@ -96,13 +104,13 @@ nav.pageCategory {
     align-items: center;
     justify-content: flex-end;
     gap: 38px;
-    padding: 40px 40px 0 0;
+    padding: 30px 40px 15px 0;
     position: sticky;
-    top: 5px;
-    z-index: 10;
-    /*border-bottom: 1px solid #000000;*/
+    top: 0;
+    z-index: 20;
     /*border: 1px solid #000000;*/
     overflow-x: auto;
+    background: var(--page-bg);
 }
 
 nav.pageCategory .cat {
@@ -133,6 +141,8 @@ nav.pageCategory .cat.active {
     padding: 0 40px 40px;
     overflow: hidden;
     /*border: 1px solid #000000;*/
+    background: var(--page-bg);
+    z-index: 15;
 }
 
 .page-title h1 {
@@ -171,9 +181,17 @@ main {
     z-index: 10;
     width: var(--filter-width);
     /*border: 1px solid #000000;*/
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease, transform .25s ease;
 }
 
-.side-filter .text-sec{
+.side-filter.apps {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.side-filter .text-sec {
     font-size: 17px;
 }
 
@@ -199,9 +217,13 @@ main {
     aspect-ratio: 346/433;;
     background: var(--paper-dim);
     overflow: hidden;
-    border-radius: var(--radius);
     margin-bottom: 14px;
     position: relative;
+}
+
+.card-title, .card-price {
+    font-weight: 100;
+    color: #454545;
 }
 
 .thumb img {
@@ -226,14 +248,15 @@ main {
     height: 44px;
     border-radius: 50%;
     background: #000000;
-    color: #fbfaf7;
+    color: var(--page-bg);
     display: flex;
     align-items: center;
     justify-content: center;
     border: none;
     box-shadow: 0 6px 18px rgba(0, 0, 0, .18);
-    /*opacity:0;pointer-events:none;*/
-    /*transition:opacity .25s ease, transform .25s ease;*/
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease, transform .25s ease;
 }
 
 .to-top.show {
